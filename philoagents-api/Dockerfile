@@ -14,4 +14,6 @@ ENV PYTHONPATH=/app
 
 # Let your Python file handle the port
 # Tells the uv server to listen on all network interfaces (0.0.0.0) on port 10000
-CMD ["uv", "run", "--host", "0.0.0.0", "--port", "10000", "-m", "philoagents.infrastructure.api"]
+# This command directly starts the Uvicorn server and tells it how to listen for traffic.
+# This is the correct, final command for production on Render
+CMD ["uvicorn", "philoagents.infrastructure.api:app", "--host", "0.0.0.0", "--port", "10000", "--workers", "1", "--log-level", "info"]
