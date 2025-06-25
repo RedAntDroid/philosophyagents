@@ -45,6 +45,16 @@ class ChatMessage(BaseModel):
     philosopher_id: str
 
 
+# Health check endpoints for Render deployment
+@app.get("/")
+async def health_check():
+    return {"status": "healthy", "message": "PhiloAgents API is running"}
+
+@app.get("/health")
+async def health_endpoint():
+    return {"status": "healthy", "message": "PhiloAgents API is running"}
+
+
 @app.post("/chat")
 async def chat(chat_message: ChatMessage):
     try:

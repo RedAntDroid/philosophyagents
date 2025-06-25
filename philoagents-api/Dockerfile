@@ -10,6 +10,7 @@ RUN uv sync --frozen --no-cache
 COPY src/philoagents philoagents/
 COPY tools tools/
 
-EXPOSE 8000
+ENV PYTHONPATH=/app
 
-CMD ["/app/.venv/bin/uvicorn", "philoagents.infrastructure.api:app", "--host", "0.0.0.0", "--port", "8000"]
+# Use Render's dynamic PORT
+CMD ["sh", "-c", "uv run uvicorn philoagents.infrastructure.api:app --host 0.0.0.0 --port ${PORT:-8000}"]
