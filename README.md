@@ -1,5 +1,8 @@
 # PhilosophyAgents 🧠
 
+
+Deployed link: https://philosophyagents.netlify.app/
+
 This is a deployment-ready fork and customization of the **PhiloAgents Course** project from the [DecodingML Substack](https://decodingml.substack.com/p/master-production-ai-with-our-end) by **Neural Maze**.
 
 I built this as part of a hands-on learning process in agentic AI systems, integrating knowledge from the course with my own deployment, containerization, and frontend customization efforts.
