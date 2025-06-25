@@ -13,4 +13,5 @@ COPY tools tools/
 ENV PYTHONPATH=/app
 
 # Let your Python file handle the port
-CMD ["uv", "run", "python", "-m", "philoagents.infrastructure.api"]
+# Tells the uv server to listen on all network interfaces (0.0.0.0) on port 10000
+CMD ["uv", "run", "--host", "0.0.0.0", "--port", "10000", "-m", "philoagents.infrastructure.api"]
