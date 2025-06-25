@@ -12,5 +12,5 @@ COPY tools tools/
 
 ENV PYTHONPATH=/app
 
-# Use Render's dynamic PORT
-CMD ["sh", "-c", "uv run uvicorn philoagents.infrastructure.api:app --host 0.0.0.0 --port ${PORT:-8000}"]
+# Let your Python file handle the port
+CMD ["uv", "run", "python", "-m", "philoagents.infrastructure.api"]
